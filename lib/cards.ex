@@ -6,6 +6,14 @@ defmodule Cards do
 
   @doc """
   Returns a list of strings representing a deck of playing cards
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> hand
+      ["Ace of Spades"]
+
   """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five", "Six",
