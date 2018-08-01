@@ -4,8 +4,12 @@ defmodule Cards do
   """
 
 
+  @doc """
+  Returns a list of strings representing a deck of playing cards
+  """
   def create_deck do
-    values = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" , "Ten", "Jack", "Queen", "King"]
+    values = ["Ace", "Two", "Three", "Four", "Five", "Six",
+    "Seven", "Eight", "Nine" , "Ten", "Jack", "Queen", "King"]
     suits = ["Spades", "Hearths","Clubs", "Diamonds"]
 
     for value <- values, suit <- suits do
@@ -21,6 +25,11 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
+  @doc """
+  Divides a deck into a hand and the remainder of the deck.
+  The `hand_size` argument indicated how many cards should be in
+  the hand
+  """
   def deal(deck, hands_size) do
     Enum.split(deck, hands_size)
   end
